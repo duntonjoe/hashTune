@@ -2,10 +2,10 @@ package hashTune;
 
 import java.util.Stack;
 
-public class HashMusic {
+public class Mozart {
 	String hashCodes;
 	String input;
-	public HashMusic(String input) {
+	public Mozart(String input) {
 		this.input = input;
 		this.hashCodes = writeMusic();
 	}
@@ -25,6 +25,7 @@ public class HashMusic {
 			code = newWord.hashCode();
 			hashCodes += code.toString();
 		}
+		hashCodes = hashCodes.substring(1); //remove leading "1"
 		return hashCodes;
 	}
 
