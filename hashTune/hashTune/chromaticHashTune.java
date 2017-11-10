@@ -1,5 +1,7 @@
 package hashTune;
 
+import java.io.File;
+import java.io.FileNotFoundException;
 import java.util.Random;
 import java.util.Scanner;
 import javax.sound.midi.MidiChannel;
@@ -41,12 +43,13 @@ public class chromaticHashTune {
 	 * S: Slower
 	 * 
 	 * starts on 5th octave
+	 * @throws FileNotFoundException 
 	 */
-	public static void main(String[] args) throws MidiUnavailableException, InterruptedException {
-		System.out.println("put in song");
-		System.out.println(Character.getNumericValue('F') + " " + Character.getNumericValue('S'));
-		Scanner console = new Scanner(System.in);
-		input = console.nextLine();
+	public static void main(String[] args) throws MidiUnavailableException, InterruptedException, FileNotFoundException {
+		System.out.println("enter song:");
+		File file = new File("song.txt");
+		Scanner console = new Scanner(file);
+		input = console.next();
 		console.close();
 		playSong();
 	}
@@ -90,13 +93,13 @@ public class chromaticHashTune {
 			else if (note == 26) {
 				volume -= 20;
 			}
-			// shorten notes by 50ms
+			// shorten notes by 100ms
 			else if (note == 15) {
-				duration -= 50;
+				duration -= 100;
 			}
-			// lengthen notes by 50ms
+			// lengthen notes by 100ms
 			else if (note == 28) {
-				duration += 50;
+				duration += 100;
 			}
 			// Play pure tone if 0<Note<=8
 			else if (note > -1 && note < 13) {
@@ -110,7 +113,7 @@ public class chromaticHashTune {
 				}
 				channels[0].noteOn(notes[note], volume);
 				Thread.sleep(duration);
-				channels[0].noteOff(notes[note]);
+				//channels[0].noteOff(notes[note]);
 			}
 		}
 	}
