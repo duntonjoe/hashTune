@@ -1,4 +1,4 @@
-package hashCodes;
+package hashTune;
 
 import java.util.Stack;
 
