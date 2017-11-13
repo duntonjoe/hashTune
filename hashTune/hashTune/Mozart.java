@@ -17,9 +17,8 @@ public class Mozart {
 	 * @return
 	 */
 	public String writeMusic() {
-		Stack<String> words = new Stack<String>();
 		String[] arr = input.split(" ");
-		Integer code = words.hashCode();
+		Integer code = input.hashCode();
 		hashCodes = code.toString();
 		for (String newWord : arr) {
 			code = newWord.hashCode();

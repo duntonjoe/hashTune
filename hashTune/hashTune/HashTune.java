@@ -17,7 +17,7 @@ import javax.sound.midi.Synthesizer;
 public class HashTune {
 	static String music;
 	static int volume = 60;
-	static int duration = 500;
+	static int duration = 200;
 
 	public static void main(String[] args) throws MidiUnavailableException, InterruptedException {
 		System.out.println("Type some string of words/characters, then press enter");
@@ -43,7 +43,6 @@ public class HashTune {
 		Synthesizer synth = MidiSystem.getSynthesizer();
 		synth.open();
 		MidiChannel[] channels = synth.getChannels();
-		Random rand = new Random();
 		// notes[] array of midi codes in C major Pentatonic {0, C5, D5, E5, G5, A5, C6, D6, E6}
 		int[] notes = { 0, 60, 62, 64, 67, 69, 72, 74, 76};
 		String[] names = {"x", "C", "D", "E", "G", "A", "C", "D", "E"};

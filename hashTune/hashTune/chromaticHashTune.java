@@ -47,7 +47,7 @@ public class chromaticHashTune {
 	 */
 	public static void main(String[] args) throws MidiUnavailableException, InterruptedException, FileNotFoundException {
 		System.out.println("enter song:");
-		File file = new File("song.txt");
+		File file = new File("H:\\git\\hashTune\\hashTune\\hashTune\\song.txt");
 		Scanner console = new Scanner(file);
 		input = console.next();
 		console.close();
