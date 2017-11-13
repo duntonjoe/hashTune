@@ -113,7 +113,7 @@ public class chromaticHashTune {
 				}
 				channels[0].noteOn(notes[note], volume);
 				Thread.sleep(duration);
-				//channels[0].noteOff(notes[note]);
+				channels[0].noteOff(notes[note]);
 			}
 		}
 	}
